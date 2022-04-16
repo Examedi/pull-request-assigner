@@ -114,7 +114,7 @@ export function chooseUsers(
   unavailableUsers: string[]
 ): string[] {
   const filteredCandidates = candidates.filter((reviewer: string): boolean => {
-    return reviewer !== filterUser && !unavailableUsers.includes(reviewer);
+    return reviewer !== filterUser && (unavailableUsers && !unavailableUsers.includes(reviewer));
   });
 
   // all-assign

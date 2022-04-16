@@ -30007,7 +30007,7 @@ function chooseAssignees(owner, config, unavailableUsers) {
 exports.chooseAssignees = chooseAssignees;
 function chooseUsers(candidates, desiredNumber, filterUser = '', unavailableUsers) {
     const filteredCandidates = candidates.filter((reviewer) => {
-        return reviewer !== filterUser && !unavailableUsers.includes(reviewer);
+        return reviewer !== filterUser && (unavailableUsers && !unavailableUsers.includes(reviewer));
     });
     // all-assign
     if (desiredNumber === 0) {
