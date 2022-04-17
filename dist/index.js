@@ -29965,8 +29965,7 @@ function getUnavailableUsers(availabilityExceptions) {
     const day = d.getDay();
     const dayOfWeek = weekdayMap[day];
     const unavailableUsers = availabilityExceptions[dayOfWeek];
-    // will be undefined when availabilityExceptions is defined, but the current weekday is not in the list
-    if (unavailableUsers !== undefined) {
+    if (unavailableUsers !== undefined && unavailableUsers !== null) {
         return unavailableUsers;
     }
     return [];
