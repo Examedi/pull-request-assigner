@@ -22,8 +22,7 @@ export function getUnavailableUsers(
 
   const unavailableUsers = availabilityExceptions[dayOfWeek];
 
-  // will be undefined when availabilityExceptions is defined, but the current weekday is not in the list
-  if (unavailableUsers !== undefined) {
+  if (unavailableUsers !== undefined && unavailableUsers !== null) {
     return unavailableUsers;
   }
 
